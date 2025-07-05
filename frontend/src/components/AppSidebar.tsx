@@ -1,5 +1,4 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
- 
+
 import {
   Sidebar,
   SidebarContent,
@@ -7,57 +6,30 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
 } from "@/components/ui/sidebar"
- 
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-]
+import SidebarCalendar from "./SidebarCalendar"
+import { Button } from "./ui/button"
+
  
 export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupLabel className="pl-4">Calendar</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+            <SidebarMenu className="flex justify-center items-center">
+            <SidebarCalendar></SidebarCalendar>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+                <SidebarGroup>
+          <SidebarGroupLabel className="pl-4">Zones</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu className="flex justify-center items-center">
+              <Button>
+                Test
+              </Button>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
