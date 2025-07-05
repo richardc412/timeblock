@@ -1,4 +1,3 @@
-
 import {
   Sidebar,
   SidebarContent,
@@ -6,34 +5,31 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
-} from "@/components/ui/sidebar"
-import SidebarCalendar from "./SidebarCalendar"
-import { Button } from "./ui/button"
+} from "@/components/ui/sidebar";
+import SidebarCalendar from "./SidebarCalendar";
+import { Button } from "./ui/button";
 
- 
 export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="pl-4">Calendar</SidebarGroupLabel>
+          <SidebarGroupLabel>Calendar</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu className="flex justify-center items-center">
-            <SidebarCalendar></SidebarCalendar>
+            <SidebarMenu>
+              <SidebarCalendar />
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-                <SidebarGroup>
-          <SidebarGroupLabel className="pl-4">Zones</SidebarGroupLabel>
+        <SidebarGroup>
+          <SidebarGroupLabel>Zones</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu className="flex justify-center items-center">
-              <Button>
-                Test
-              </Button>
+            <SidebarMenu>
+              <Button className="w-full">Test</Button>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
-  )
+  );
 }
