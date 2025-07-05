@@ -9,6 +9,8 @@ import {
 import SidebarCalendar from "./SidebarCalendar";
 import { Button } from "./ui/button";
 
+const EXAMPLE_ZONES = ["⛏️ Deep Work", "💼 Work", "🎮 Gaming", "💪 Workout"];
+
 export function AppSidebar() {
   return (
     <Sidebar>
@@ -25,7 +27,9 @@ export function AppSidebar() {
           <SidebarGroupLabel>Zones</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              <Button className="w-full">Test</Button>
+              {EXAMPLE_ZONES.map((zone) => {
+                return <Button className="w-full">{zone}</Button>;
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
